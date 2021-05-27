@@ -1,7 +1,6 @@
 // Copyright 2021 NNTU-CS
 #ifndef INCLUDE_BST_H_
 #define INCLUDE_BST_H_
-
 template <typename T>
 class BST {
  public:
@@ -11,21 +10,6 @@ class BST {
     Node * left;
     Node * right;
   };
-  
-  public:
-  BST() : root(nullptr) {}
-  ~BST() {}
-
-  void add(T value) {
-    root = addNode(root, value);
-  }
-  int depth() {
-    return depthTree(root);
-  }
-  int search(T value) {
-    return searchNode(root, value);
-  }
-};
 
  private:
   Node * root;
@@ -66,4 +50,20 @@ class BST {
         return searchNode(root->left, value);
     }
   }
+
+ public:
+  BST() : root(nullptr) {}
+  ~BST() {}
+
+  void add(T value) {
+    root = addNode(root, value);
+  }
+  int depth() {
+    return depthTree(root);
+  }
+  int search(T value) {
+    return searchNode(root, value);
+  }
+};
+
 #endif  // INCLUDE_BST_H_
